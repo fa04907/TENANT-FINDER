@@ -1,0 +1,237 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px gray;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, textarea, button {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Property Cards */
+.property-item {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0px 0px 10px #ddd;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.property-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Banner Image */
+.banner img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Property Listing */
+.property-listing img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .property-item {
+        flex-direction: column;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Navbar */
+nav {
+    background-color: #0a3463;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    display: flex;
+    margin-top: 15px;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Buttons */
+.button-group {
+    margin-top: 20px;
+}
+
+.button-group button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Featured Property */
+.featured {
+    text-align: center;
+    padding: 20px;
+}
+
+.featured h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* About Us */
+.about {
+    text-align: center;
+    padding: 20px;
+}
+
+.about h2 {
+    font-size: 2rem;
+}
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Real Estate Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .container {
+            width: 40%;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .nav-bar {
+            background-color: #333;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+    
+    <nav style="background-color: #333; padding: 15px;">
+    <div class="nav-bar">Register</div>
+    <a href="index.php" style="color: white; margin-right: 20px; text-decoration: none;">Home</a>
+    <a href="about.php" style="color: white; margin-right: 20px; text-decoration: none;">About</a>
+    <a href="contact.php" style="color: white; text-decoration: none;">Contact</a>
+</nav>
+
+<script>
+    function validateForm() {
+        // Get the email value from the input
+        var email = document.getElementById('email').value;
+
+        // Check if the email ends with '@gmail.com'
+        if (!email.endsWith('@gmail.com')) {
+            alert('Please enter a valid Gmail address ending with @gmail.com');
+            return false; // Prevent form submission
+        }
+
+        return true; // Allow form submission
+    }
+</script>
+
+<section class="container">
+    <h2>Create an Account</h2>
+    <form action="submit_registration.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+        
+        <!-- Other fields here... -->
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Other fields here... -->
+
+        <button type="submit">Register</button>
+        <p>Already registered? <a href="login.php">Login here</a></p>
+    </form>
+</section>
+</body>
+</html>

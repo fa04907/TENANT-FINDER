@@ -1,0 +1,49 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background: url('house2.jpg') no-repeat center center/cover; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+    <!-- Header -->
+    <header style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background: rgba(0, 51, 102, 0.9); color: white; position: absolute; top: 0;">
+        <h1>Real Estate Portal</h1>
+        <nav>
+            <a href="index.php" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
+            <a href="about.php" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">About</a>
+            <a href="contact.php" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Contact</a>
+            <a href="available_properties.php" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Available Properties</a>
+        </nav>
+    </header>
+
+    <!-- Login Form Section -->
+    <section style="max-width: 400px; background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.2); text-align: center;">
+        <h2 style="color: #003366;">Login</h2>
+
+        <?php if (isset($_SESSION['error'])): ?>
+            <p style="color: red;"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <?php endif; ?>
+
+        <form action="login_handler.php" method="POST">
+            <input type="text" name="username" placeholder="Enter Username" required 
+                   style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+
+            <input type="password" name="password" placeholder="Enter Password" required 
+                   style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+
+            <button type="submit" style="width: 100%; padding: 10px; background: #003366; color: white; border: none; cursor: pointer; font-weight: bold;">Login</button>
+        </form>
+
+        <p style="margin-top: 15px;">Don't have an account? <a href="register.php" style="color: #003366;">Register here</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer style="width: 100%; text-align: center; background: rgba(0, 51, 102, 0.9); color: white; padding: 20px; position: absolute; bottom: 0;">
+        <p>© 2025 Real Estate Portal | All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Properties - Real Estate Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Available Properties</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="customer_dashboard.html">Dashboard</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Find Your Ideal Property</h2>
+
+        <!-- Search Filters -->
+        <div class="filter-section">
+            <label for="propertyType">Select Property Type:</label>
+            <select id="propertyType">
+                <option value="all">All</option>
+                <option value="flat">Flat</option>
+                <option value="house">House</option>
+                <option value="2bhk">2BHK</option>
+                <option value="3bhk">3BHK</option>
+                <option value="land">Land</option>
+                <option value="agriculture">Agricultural Land</option>
+            </select>
+
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" placeholder="Search by location...">
+            
+            <button onclick="filterProperties()">Apply Filter</button>
+        </div>
+
+        <!-- Property Listings -->
+        <div class="property-list">
+            <div class="property-item" data-type="3bhk" data-location="noida">
+                <img src="house1.jpg" alt="3BHK in Noida">
+                <h3>3BHK Apartment</h3>
+                <p><strong>Location:</strong> Noida, Sector 150</p>
+                <p><strong>Price:</strong> ₹80,00,000</p>
+                <p><strong>Infrastructure:</strong> Modern gated community with pool, gym, and security.</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐ (4.5/5)</p>
+                <button>View Details</button>
+            </div>
+
+            <div class="property-item" data-type="land" data-location="mumbai">
+                <img src="land1.jpg" alt="Land in Mumbai">
+                <h3>Commercial Land</h3>
+                <p><strong>Location:</strong> Mumbai, Bandra</p>
+                <p><strong>Price:</strong> ₹3,50,00,000</p>
+                <p><strong>Infrastructure:</strong> Open land near prime commercial hub.</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5/5)</p>
+                <button>View Details</button>
+            </div>
+        </div>
+
+        <h3>Contact Admin for More Details</h3>
+        <p>Email: admin@realestate.com</p>
+        <p>Phone: +91-9876543210</p>
+    </section>
+
+    <!-- Inline JavaScript -->
+    <script>
+        function filterProperties() {
+            var type = document.getElementById("propertyType").value.toLowerCase();
+            var location = document.getElementById("location").value.toLowerCase();
+            var properties = document.querySelectorAll(".property-item");
+
+            properties.forEach(property => {
+                var propType = property.getAttribute("data-type").toLowerCase();
+                var propLocation = property.getAttribute("data-location").toLowerCase();
+                var matchesType = type === "all" || propType.includes(type);
+                var matchesLocation = location === "" || propLocation.includes(location);
+
+                property.style.display = (matchesType && matchesLocation) ? "block" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>

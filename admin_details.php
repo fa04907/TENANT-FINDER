@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Details - Real Estate Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #003366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #003366;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e6f2ff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-left: 5px solid #003366;
+        }
+        details {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #f9f9f9;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        details[open] {
+            background: #e6f2ff;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .contact-form {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background: #003366;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .contact-form button:hover {
+            background: #002244;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Details</h1>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="available_properties.php">Available Properties</a>
+            <a href="admin_details.php">Admin Details</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2>Contact Admin</h2>
+        <p>If you have any queries or issues regarding the portal, feel free to reach out to our support team.</p>
+
+        <h3>Admin Contact Information</h3>
+        <p><strong>Email:</strong> support@realestateportal.com</p>
+        <p><strong>Phone:</strong> +91-9876543210</p>
+        <p><strong>Office Address:</strong> 123, Real Estate Hub, Mumbai, India</p>
+
+        <h3>Support & Services</h3>
+        <ul>
+            <li>🔹 Property Listing Assistance</li>
+            <li>🔹 Payment & Refund Queries</li>
+            <li>🔹 Tenant & Customer Support</li>
+            <li>🔹 Legal Documentation Guidance</li>
+        </ul>
+
+        <h3>Frequently Asked Questions (FAQs)</h3>
+        <details>
+            <summary><strong>How can I list my property?</strong></summary>
+            <p>Property owners can list their properties by logging into their dashboard and filling out the "Add Property" form. A ₹1000 registration fee is required.</p>
+        </details>
+        <details>
+            <summary><strong>How do I withdraw a property listing?</strong></summary>
+            <p>Owners can withdraw their property from the listing via their dashboard. 75% of the registration fee will be refunded.</p>
+        </details>
+        <details>
+            <summary><strong>Who do I contact for payment issues?</strong></summary>
+            <p>You can reach out to our support team at <strong>support@realestateportal.com</strong> or call +91-9876543210.</p>
+        </details>
+
+        <h3>Get in Touch</h3>
+        <?php
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $name = htmlspecialchars($_POST['name']);
+            $email = htmlspecialchars($_POST['email']);
+            $message = htmlspecialchars($_POST['message']);
+
+            // Display confirmation message
+            echo "<p style='color: green;'>Thank you, $name! Your message has been received.</p>";
+
+            // Here, you can add code to save the message to a database or send an email.
+        }
+        ?>
+
+        <form class="contact-form" action="admin_details.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
